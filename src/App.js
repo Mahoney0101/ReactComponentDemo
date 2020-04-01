@@ -1,26 +1,45 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import { Route } from 'react-router';
+import { Layout } from './components/Layout';
+import { Home } from './components/Home';
+import { Demo } from './components/Demo';
+import DemoFunctional from './components/DemoFunctional';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import './custom.css'
+
+export default class App extends Component {
+    static displayName = App.name;
+
+    constructor(props) {
+        super(props)
+        this.setValue = this.setValue.bind(this);
+
+        this.state = {
+            value: 0
+        }
+    }
+
+    setValue(state) {
+        this.setState({value: state});
+    }
+
+  render () {
+    return (
+      <Layout>
+        <Route exact path='/' component={Home} />
+        <Route path='/demo' render={props =>
+            <Demo {...props}
+                parentValue={this.state.value}
+                setParentValue={this.setValue}
+            />}
+            />
+            <Route path='/demo-functional' render={props =>
+                <DemoFunctional {...props}
+                    parentValue={this.state.value}
+                    setParentValue={this.setValue}
+                />}
+            />
+      </Layout>
+    );
+  }
 }
-
-export default App;
