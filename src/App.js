@@ -25,7 +25,7 @@ export default class App extends Component {
   render () {
     return (
       <Layout>
-        <Route path='/demo' render={props =>
+        <Route path='/' render={props =>
             <Demo {...props}
                 parentValue={this.state.value}
                 setParentValue={this.setValue}
