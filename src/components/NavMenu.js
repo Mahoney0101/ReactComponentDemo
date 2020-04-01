@@ -36,6 +36,9 @@ export class NavMenu extends Component {
                 <NavItem>
                     <NavLink tag={Link} className="text-dark" to="/demo-functional">Demo Functional Components</NavLink>
                 </NavItem>
+                <NavItem>
+                    <NavLink tag={Link} className="text-dark" to="/clock">Functional clock</NavLink>
+                </NavItem>
               </ul>
             </Collapse>
           </Container>

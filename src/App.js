@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { Route } from 'react-router';
 import { Layout } from './components/Layout';
 import { Demo } from './components/Demo';
+import ClockUsingHooks from './components/Clock';
 import DemoFunctional from './components/DemoFunctional';
-
 import './custom.css'
 
 export default class App extends Component {
@@ -25,6 +25,7 @@ export default class App extends Component {
   render () {
     return (
       <Layout>
+        <Route path='/clock' component={ClockUsingHooks}/>
         <Route exact path='/' render={props =>
             <Demo {...props}
                 parentValue={this.state.value}
