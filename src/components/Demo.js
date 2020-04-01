@@ -4,11 +4,10 @@ export class Demo extends Component {
 
   constructor(props) {
       super(props);
-
       this.getNumber = this.getNumber.bind(this);
-
       this.state = { currentValue: this.props.parentValue };
     }
+
     getNumber() {
         return document.getElementById("numberInput").value;
     }
@@ -33,7 +32,6 @@ export class Demo extends Component {
                     <li>React will always update once a state changes and will only update what has changed(You can see this in chrome with f12 and view Elements)</li>
                 </ul>
             </p>
-
             <p aria-live="polite">Current value from parent state: <strong>{this.state.currentValue}</strong></p>
 
             <input id="numberInput" type="number" placeholder="Change me" defaultValue="1"></input>
@@ -43,7 +41,6 @@ export class Demo extends Component {
     );
   }
 }
-
 class ChangeButton extends Component {
     constructor(props) {
         super(props);
