@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router';
 import { Layout } from './components/Layout';
-import { Home } from './components/Home';
 import { Demo } from './components/Demo';
 import DemoFunctional from './components/DemoFunctional';
 
@@ -26,7 +25,6 @@ export default class App extends Component {
   render () {
     return (
       <Layout>
-        <Route exact path='/' component={Home} />
         <Route path='/demo' render={props =>
             <Demo {...props}
                 parentValue={this.state.value}
