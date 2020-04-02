@@ -3,7 +3,7 @@ import { Route } from 'react-router';
 import { Layout } from './components/Layout';
 import { Demo } from './components/Demo';
 import ClockWithHooks from './components/Clock';
-import DemoFunctio from './components/DemoFunctional';
+import DemoFunctional from './components/DemoFunctional';
 import './custom.css'
 
 export default class App extends Component {
@@ -31,7 +31,7 @@ export default class App extends Component {
             />}
             />
             <Route path='/demo-functional' render={() =>
-                <DemoFunctio
+                <DemoFunctional
                     parentValue={this.state.value}
                     setParentValue={this.setValue}
                 />}
