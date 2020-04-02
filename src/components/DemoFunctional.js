@@ -4,11 +4,9 @@ const DemoFunctional = (props) => {
 
     const[currentValue, setCurrentValue] = useState(props.parentValue);
 
-    function getNumber(){
+    const getNumber = () =>{
         return document.getElementById("numberInput").value;
     }
-
-    getNumber = getNumber.bind(this);
 
     useEffect(() => setCurrentValue(props.parentValue), [props.parentValue]);
 

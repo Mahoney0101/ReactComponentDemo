@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { Route } from 'react-router';
 import { Layout } from './components/Layout';
 import { Demo } from './components/Demo';
-import ClockUsingHooks from './components/Clock';
-import DemoFunctional from './components/DemoFunctional';
+import ClockWithHooks from './components/Clock';
+import DemoFunctio from './components/DemoFunctional';
 import './custom.css'
 
 export default class App extends Component {
@@ -25,19 +25,19 @@ export default class App extends Component {
   render () {
     return (
       <Layout>
-        <Route path='/clock' component={ClockUsingHooks}/>
-        <Route exact path='/' render={props =>
-            <Demo {...props}
+        <Route exact path='/' render={() =>
+            <Demo
                 parentValue={this.state.value}
                 setParentValue={this.setValue}
             />}
             />
-            <Route path='/demo-functional' render={props =>
-                <DemoFunctional {...props}
+            <Route path='/demo-functional' render={() =>
+                <DemoFunctio
                     parentValue={this.state.value}
                     setParentValue={this.setValue}
                 />}
             />
+            <Route path='/clock' component={ClockWithHooks}/>
       </Layout>
     );
   }
